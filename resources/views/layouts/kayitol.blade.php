@@ -44,7 +44,7 @@
       <option>Üniversite Seçiniz </option>
       <option> Kocaeli Üniversitesi </option>
     </select> <br>
-    <select>
+    <select name="fakulte">
     <option> Fakülte Seçiniz </option>
     <option> </option>
     <option> </option>
@@ -52,7 +52,7 @@
     <option>  </option>
     <option> </option>
   </select> <br>
-  <select>
+  <select name="bolum">
   <option> Bölüm Seçiniz </option>
   <option>  </option>
   <option>  </option>

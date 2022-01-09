@@ -24,10 +24,13 @@ class KullanicilarTablo extends Migration
             $table->string('adres');
             $table->string('tc');
             $table->string('image');
+            $table->string('fakülte')->nullable();
+            $table->string('bolum')->nullable();
+            $table->string('sınıf');
             $table->timestamps();
         });
 
-        
+
     }
 
     /**
