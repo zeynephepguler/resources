@@ -23,8 +23,8 @@
 <div >
   <form action="{{ route('capkontrol') }}" method="post" enctype="multipart/form-data">
     @csrf
-    <input type="hidden" name="çap" value="başvuru talebi var">
-    <input type="hidden" name="öğrencino" value="{{$LoggedUserInfo['no']}}">
+    <input type="hidden" name="cap" value="başvuru talebi var">
+    <input type="hidden" name="ogrencino" value="{{$LoggedUserInfo['no']}}">
     <button type="submit" class="btn btn-block btn-primary" name="button" >Başvuru Yap</button>
 
   </form>
