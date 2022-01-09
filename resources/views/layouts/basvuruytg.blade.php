@@ -22,11 +22,5 @@
 <input name="ad" type="text" size="50px"> <br><br>
 <label> Ekler: </label> <label>Trankript  Ders Planı Ders İçerikleri disiplin Ösym </label>
 </div>
-<form action="{{ route('ytykontrol') }}" method="post" enctype="multipart/form-data">
-    @csrf
-    <input type="hidden" name="yataygecis" value="başvuru talebi var">
-    <input type="hidden" name="ogrencino" value="{{$LoggedUserInfo['no']}}">
-    <button type="submit" class="btn btn-block btn-primary" name="button" >Başvuru Yap</button>
 
-  </form>
 @stop

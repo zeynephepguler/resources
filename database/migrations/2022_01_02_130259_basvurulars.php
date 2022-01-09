@@ -15,12 +15,12 @@ class Basvurulars extends Migration
     {
       Schema::create('basvurus', function (Blueprint $table) {
           $table->id();
-          $table->string('ogrencino',"")->nullable();
-          $table->string('cap',"")->nullable();
+          $table->string('öğrencino',"")->nullable();
+          $table->string('çap',"")->nullable();
           $table->string('yazokulu',"")->nullable();
           $table->string('intibak',"")->nullable();
-          $table->string('yataygecis',"")->nullable();
-          $table->string('dikeygecis',"")->nullable();
+          $table->string('yataygeçiş',"")->nullable();
+          $table->string('dikeygeçiş',"")->nullable();
           $table->timestamps();
 
       });

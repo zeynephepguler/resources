@@ -94,12 +94,4 @@ Route::post('ogrencigiris',[UseConroller::class,'kontrol'])->name('kayitkontrol'
 Route::get('/ogrencigiris',[UseConroller::class,'ogrencigiris']);
 Route::get('/kisiselbilgiler',[UseConroller::class, 'bilgiler']);
 Route::post('basvurucap',[UseConroller::class,'basvuru'])->name('capkontrol');
-Route::post('basvuruyty',[UseConroller::class,'basvuru'])->name('ytykontrol');
-Route::post('basvurudgs',[UseConroller::class,'basvuru'])->name('dgskontrol');
-Route::post('basvuruintibak',[UseConroller::class,'basvuru'])->name('inibakkontrol');
-Route::post('basvuruyazokulu',[UseConroller::class,'basvuru'])->name('yazokulukontrol');
 Route::get('/basvurucap',[UseConroller::class, 'cap']);
-Route::get('/basvuruytg',[UseConroller::class, 'yty']);
-Route::get('/basvurudgs',[UseConroller::class, 'dgs']);
-Route::get('/basvuruintibak',[UseConroller::class, 'intibak']);
-Route::get('/basvuruyazokulu',[UseConroller::class, 'yazokulu']);

@@ -52,9 +52,6 @@ class UseConroller extends Controller
       $kullani->telefon=$req->telefon;
       $kullani->adres=$req->adres;
       $kullani->tc=$req->tc;
-      $kullani->sınıfsec=$req->sınıfsec;
-      $kullani->bolum;
-      $kullani->fakulte;
       if($req->hasfile('image'))
               {
                   $file = $req->file('image');
@@ -79,7 +76,7 @@ class UseConroller extends Controller
         $userInfo = Kullani::where('no','=', $request->no)->first();
 
         if(!$userInfo){
-            return back()->with('fail','Numaraya kayıtlı Ögrenci yok');
+            return back()->with('fail','Numaraya kayıtlı Öğrenci yok');
         }else{
             //check password
             if(Hash::check($request->sifre, $userInfo->sifre)){
@@ -87,7 +84,7 @@ class UseConroller extends Controller
                 return redirect('ogrencianasayfa');
 
             }else{
-                return back()->with('fail','sifre Yanlıs');
+                return back()->with('fail','Şifre Yanlış');
             }
         }
     }
@@ -98,29 +95,15 @@ class UseConroller extends Controller
    }
    public function basvuru (Request $req)
    {
-     $ref_tablename='basvurular';
-     $postData = [
-       'ogrNo'=>$req->ogrencino,
-       'cap'=>$req->cap,
-       'yazokulu'=>$req->yazokulu,
-       'yataygecis'=>$req->yataygecis,
-       'dikeygecis'=>$req->dikeygecis,
-       'intibak'=>$req->intibak,
-
-
-
-     ];
-     $postRef = $this->database->getReference($ref_tablename)->push($postData);
-
      $basvuru = new basvuru();
-     $basvuru->ogrencino=$req->ogrencino;
-     $basvuru->cap=$req->cap;
-     $basvuru->yazokulu=$req->yazokulu;
-     $basvuru->yataygecis=$req->yataygecis;
-     $basvuru->dikeygecis=$req->dikeygecis;
+     $basvuru->öğrencino=$req->öğrencino;
+     $basvuru->çap=$req->çap;
+     $basvuru->yazokulu=$req->yazoyataygeçiş;
+     $basvuru->yataygeçiş=$req->yataygeçiş;
+     $basvuru->dikeygeçiş=$req->dikeygeçiş;
      $basvuru->intibak=$req->intibak;
      $basvuru->save();
-     return redirect('basvurularim');
+     return redirect('basvurularım');
 
      $data = ['LoggedUserInfo'=>Kullani::where('id','=', session('LoggedUser'))->first()];
      return view('layouts.basvurucap', $data);
@@ -130,26 +113,6 @@ class UseConroller extends Controller
      $data = ['LoggedUserInfo'=>Kullani::where('id','=', session('LoggedUser'))->first()];
      return view('layouts.basvurucap', $data);
    }
-   public function dgs()
-    {
-      $data = ['LoggedUserInfo'=>Kullani::where('id','=', session('LoggedUser'))->first()];
-      return view('layouts.basvurudgs', $data);
-    }
-    public function intibak()
-   {
-     $data = ['LoggedUserInfo'=>Kullani::where('id','=', session('LoggedUser'))->first()];
-     return view('layouts.basvuruintibak', $data);
-   }
-   public function yazokulu()
-  {
-    $data = ['LoggedUserInfo'=>Kullani::where('id','=', session('LoggedUser'))->first()];
-    return view('layouts.basvuruyazokulu', $data);
-  }
-  public function yty()
-  {
-   $data = ['LoggedUserInfo'=>Kullani::where('id','=', session('LoggedUser'))->first()];
-   return view('layouts.basvuruytg', $data);
-  }
 
 
 
